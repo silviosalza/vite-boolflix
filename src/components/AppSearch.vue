@@ -1,6 +1,14 @@
 <script>
+import {store} from "../store";
 export default{
     name: "AppSearch",
+    emits: ["filter"],
+    data (){
+        return{
+            store,
+        }
+    }
+
   
 }
 
@@ -10,11 +18,11 @@ export default{
     
         <div class="search-section d-flex gap-2">
             <div class="searchbar input-group mb-3">
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Inserisci il titolo">
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Inserisci il titolo" v-model="store.UserFilter">
             </div>
 
             <div>
-                <button class="btn btn-danger">Cerca</button>
+                <button @click="$emit('filter')" class="btn btn-danger">Cerca</button>
             </div>
         </div>
 </template>

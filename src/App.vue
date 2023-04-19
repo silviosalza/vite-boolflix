@@ -14,6 +14,9 @@ export default{
       store
     }
 
+  },
+  methods:{
+    
   }
 }
 
@@ -23,7 +26,7 @@ export default{
 <template>
   <AppHeader/>
   <AppMainPage/>
-  
+
   
 </template>
 
