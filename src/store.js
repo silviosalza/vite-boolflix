@@ -7,7 +7,9 @@ export const store = reactive({
     TVshows: [],
     APIurl: "https://api.themoviedb.org/3/search/movie",
     UserFilter: "",
-    imgURL: "https://image.tmdb.org/t/p/w342"
+    imgURL: "https://image.tmdb.org/t/p/w342",
+    
+  
 
 
 })

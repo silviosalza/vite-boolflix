@@ -6,6 +6,15 @@ export default{
         return{
             store,
         }
+    },
+    methods:{
+        languageFlag(){
+            
+            if (this.store.movies.original_language === "en"){
+                console.log(this.store.movies.original_language )
+                
+            }
+        }
     }
   
 }
@@ -18,11 +27,11 @@ export default{
             <h2>Movies</h2>
             <ul class="d-flex flex-wrap">
                 <li class="col-1" v-for="(movie,index) in store.movies" :key="index">
-                    <img src="https://pad.mymovies.it/filmclub/2014/01/001/locandina.jpg" alt="">
+                    <img :src="`${store.imgURL}${movie.poster_path}`" alt="">
                     <ul>
                         <li>{{ movie.title }}</li>
                         <li>{{ movie.original_title }}</li>
-                        <li>{{ movie.original_language }}</li>
+                        <li> {{ movie.original_language }} <img class="languageIcon" src="../assets/Akrotiri-32.png" alt=""></li>
                         <li>{{ movie.vote_average }}</li>
                     </ul>
                 </li>
@@ -32,7 +41,7 @@ export default{
             <h2>TV Series</h2>
             <ul class="d-flex flex-wrap">
                 <li class="col-1" v-for="(tvshow,index) in store.TVshows" :key="index">
-                    <img src="https://pad.mymovies.it/filmclub/2014/01/001/locandina.jpg" alt="">
+                    <img :src="`${store.imgURL}${tvshow.poster_path}`" alt="">
                     <ul>
                         <li>{{ tvshow.name }}</li>
                         <li>{{ tvshow.original_name }}</li>
@@ -62,6 +71,9 @@ export default{
  }
  img{
     width: 100px;
+ }
+ .languageIcon{
+    width: 20px;
  }
  
  
