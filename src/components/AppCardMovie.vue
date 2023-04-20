@@ -1,7 +1,11 @@
 <script>
 import { store } from '../store';
+import LangFlag from 'vue-lang-code-flags'
 export default{
     name: "AppCardMovie",
+    components: {
+        LangFlag
+    },
     props: {
         movie: Object
     },
@@ -10,7 +14,7 @@ export default{
             store,
             isHovered: true
         }
-    }
+    },
 }
 </script>
 
@@ -20,7 +24,7 @@ export default{
         <ul v-show="!isHovered">
             <li>{{ movie.title }}</li>
             <li>{{ movie.original_title }}</li>
-            <li> {{ movie.original_language }} <img class="languageIcon" src="../assets/Akrotiri-32.png" alt=""></li>
+            <li><p>Language:</p> <lang-flag :iso= movie.original_language /></li>
             <li>{{ movie.vote_average }}</li>
         </ul>
     </div>
