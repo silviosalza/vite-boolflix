@@ -20,28 +20,55 @@ export default{
 
 <template>
     <div class="card" @mouseover="isHovered = false" @mouseleave="isHovered = true">
-        <img class="frontimg" v-show="isHovered" :src="`${store.imgURL}${movie.poster_path}`" alt="">
+        <div class="front" v-show="isHovered">
+            <img class="frontimg" :src="`${store.imgURL}${movie.poster_path}`" onerror="this.style.display='none'">
+            <p v-if= "movie.poster_path === null">{{ movie.title }}</p>
+        </div>
         <ul v-show="!isHovered">
-            <li>{{ movie.title }}</li>
-            <li>{{ movie.original_title }}</li>
-            <li><p>Language:</p> <lang-flag :iso= movie.original_language /></li>
-            <li>{{ movie.vote_average }}</li>
+            <li><span>Titolo:</span> <p>{{ movie.title }}</p></li>
+            <li><span>Titolo originale:</span> <p>{{ movie.original_title }}</p></li>
+            <li><span>Lingua originale: </span><lang-flag :iso= movie.original_language /></li>
+            <li><span>Bootflix rate:</span>{{ movie.vote_average }}</li>
         </ul>
     </div>
 </template>
 
 <style scoped lang="scss">
-
 .card{
-        width: 280px;
-        height: 400px;
+        width: 180px;
+        height: 300px;
         margin: 10px;
         background-color: rgb(23, 23, 23, 0.5);
         border-radius: 10px;
-        .frontimg{
-            height: 400px;
-            border-radius: 10px;
+        
+        ul{
+            padding: 0.5rem;
+            li{
+                list-style: none;
+                color: white;
+                span{
+                    font-weight: 700;
+        
+                }
+            }
+        }
+        .front{
+            .frontimg{
+                width: 100%;
+                height: 300px;
+                border-radius: 10px;
+                object-fit: cover;
+                overflow: hidden;
+            }
+            p{
+                color: white;
+                font-size: 1.5rem;
+                font-weight: 700;
+                text-align: center;
+            }
+
         }
     }
+
 
 </style>

@@ -20,27 +20,55 @@ export default{
 
 <template>
     <div class="card" @mouseover="isHovered = false" @mouseleave="isHovered = true">
-        <img v-show="isHovered" class="frontimg" :src="`${store.imgURL}${tvshow.poster_path}`" alt="">
+        <div class="front" v-show="isHovered">
+            <img class="frontimg" :src="`${store.imgURL}${tvshow.poster_path}`" onerror="this.style.display='none'">
+            <p v-if= "tvshow.poster_path === null ">{{ tvshow.name }}</p> 
+        </div>
+
         <ul v-show="!isHovered">
-            <li>{{ tvshow.name }}</li>
-            <li>{{ tvshow.original_name }}</li>
-            <li><lang-flag :iso= tvshow.original_language /></li>
-            <li>{{ tvshow.vote_average }}</li>
+            <li><span>Titolo:</span><p>{{ tvshow.name }}</p></li>
+            <li><span>Titolo originale:</span><p>{{ tvshow.original_name }}</p></li>
+            <li><span>Lingua originale: </span><lang-flag :iso= tvshow.original_language /></li>
+            <li><span>Bootflix rate:</span>{{ tvshow.vote_average }}</li>
         </ul>
     </div>
 </template>
 
 <style scoped lang="scss">
 .card{
-        width: 280px;
-        height: 400px;
+        width: 180px;
+        height: 300px;
         margin: 10px;
         background-color: rgb(23, 23, 23, 0.5);
         border-radius: 10px;
-    }
-.frontimg{
-        height: 400px;
-        border-radius: 10px;
+        
+        ul{
+            padding: 0.5rem;
+            li{
+                list-style: none;
+                color: white;
+                span{
+                    font-weight: 700;
+        
+                }
+            }
+        }
+        .front{
+            .frontimg{
+                width: 100%;
+                height: 300px;
+                border-radius: 10px;
+                object-fit: cover;
+                overflow: hidden;
+            }
+            p{
+                color: white;
+                font-size: 1.5rem;
+                font-weight: 700;
+                text-align: center;
+            }
+
+        }
     }
 
 </style>

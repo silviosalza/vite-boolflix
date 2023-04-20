@@ -41,28 +41,13 @@ export default{
 </template>
 
 <style scoped lang="scss">
-
 .main{
     background-color: rgb(0, 0, 0, 0.3); 
-    .card{
-        width: 280px;
-        height: 400px;
-        margin: 10px;
-        background-color: rgb(23, 23, 23, 0.5);
-        border-radius: 10px;
-        .frontimg{
-            height: 400px;
-            border-radius: 10px;
-        }
-    }
  }
  ul{
     padding: 0;
  }
  li{
     list-style: none;
- }
- .languageIcon{
-    width: 20px;
  }
 </style>
