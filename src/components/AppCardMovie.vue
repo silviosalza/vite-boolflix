@@ -35,9 +35,9 @@ export default{
 
 <style scoped lang="scss">
 .card{
-        width: 180px;
+        width: 200px;
         height: 300px;
-        margin: 10px;
+        margin: 2px;
         background-color: rgb(23, 23, 23, 0.5);
         border-radius: 10px;
         

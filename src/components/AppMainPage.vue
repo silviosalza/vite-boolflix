@@ -22,7 +22,9 @@ export default{
 <template>
     <div class="main">
         <div class="movies">
-            <h2>Movies</h2>
+            <div class="titleHeader">
+                <h2 class="d-flex justify-content-center">MOVIES</h2>
+            </div>
             <ul class="d-flex flex-wrap">
                 <li v-for="(movie,index) in store.movies" :key="index">
                     <AppCardMovie :movie="movie"/>
@@ -30,7 +32,9 @@ export default{
             </ul>
         </div>
         <div class="tvseries">
-            <h2>TV Series</h2>
+            <div class="titleHeader">
+                <h2 class="d-flex justify-content-center">TV SHOWS</h2>
+            </div>
             <ul class="d-flex flex-wrap">
                 <li v-for="(tvshow,index) in store.TVshows" :key="index">
                     <AppCardTV :tvshow="tvshow"/>
@@ -41,13 +45,24 @@ export default{
 </template>
 
 <style scoped lang="scss">
-.main{
-    background-color: rgb(0, 0, 0, 0.3); 
- }
- ul{
-    padding: 0;
- }
- li{
-    list-style: none;
+.main{ 
+    .titleHeader{
+        background-color: rgb(193, 129, 129);
+        border: 3px solid black;
+        padding: 1rem 0;
+        margin: 1rem 0;
+        h2{
+            font-weight: 700;
+            color: white;
+        }
+
+    }
+    ul{
+       padding: 0;
+       li{
+          list-style: none;
+       }
+   
+    }
  }
 </style>

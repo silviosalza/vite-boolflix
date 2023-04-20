@@ -22,12 +22,13 @@ export default{
 <template>
   <AppHeader/>
   <AppMainPage/>
-
-  
 </template>
 
 <style lang="scss" >
 @use "./styles/general.scss";
+body{
+  background-color: rgb(53, 48, 48);
+}
 
 
 </style>
