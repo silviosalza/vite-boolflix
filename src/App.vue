@@ -1,5 +1,4 @@
 <script >
-import axios from "axios";
 import {store} from "./store";
 import AppHeader from "./components/AppHeader.vue";
 import AppMainPage from "./components/AppMainPage.vue"
