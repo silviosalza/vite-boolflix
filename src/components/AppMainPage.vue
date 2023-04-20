@@ -46,6 +46,7 @@ export default{
 
 <style scoped lang="scss">
 .main{ 
+    
     .titleHeader{
         background-color: rgb(193, 129, 129);
         border: 3px solid black;
