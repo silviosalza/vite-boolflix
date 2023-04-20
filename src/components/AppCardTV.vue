@@ -1,7 +1,11 @@
 <script>
 import { store } from '../store';
+import LangFlag from 'vue-lang-code-flags'
 export default{
     name: "AppCardTV",
+    components: {
+        LangFlag
+    },
     props: {
         tvshow: Object
     },
@@ -20,7 +24,7 @@ export default{
         <ul v-show="!isHovered">
             <li>{{ tvshow.name }}</li>
             <li>{{ tvshow.original_name }}</li>
-            <li>{{ tvshow.original_language }}</li>
+            <li><lang-flag :iso= tvshow.original_language /></li>
             <li>{{ tvshow.vote_average }}</li>
         </ul>
     </div>
