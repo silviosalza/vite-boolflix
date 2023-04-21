@@ -26,9 +26,9 @@ export default{
 
 <style lang="scss" >
 @use "./styles/general.scss";
-body{
-  background-color: rgb(53, 48, 48);
 
+body{
+  background-image: linear-gradient(to right, #434343 0%, black 100%);
 }
 
 

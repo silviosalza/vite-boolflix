@@ -70,7 +70,7 @@ export default{
             }
             p{
                 color: white;
-                font-size: 1.5rem;
+                font-size: 1.3rem;
                 font-weight: 700;
                 text-align: center;
             }

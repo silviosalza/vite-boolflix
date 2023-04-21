@@ -58,8 +58,7 @@ export default{
 <style scoped lang="scss">
 .header{
     height: 100px;
-    background-color: rgb(0, 0, 0);
- }
+background-color: black; }
 
 
 </style>

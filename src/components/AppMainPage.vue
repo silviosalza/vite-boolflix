@@ -48,11 +48,12 @@ export default{
 .main{ 
     
     .titleHeader{
-        background-color: rgb(193, 129, 129);
-        border: 3px solid black;
+        background-image: linear-gradient(to right, #870000, #190a05);
         padding: 1rem 0;
         margin: 1rem 0;
+        width: 40%;
         h2{
+            font-size: 3rem;
             font-weight: 700;
             color: white;
         }
