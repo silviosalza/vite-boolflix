@@ -1,12 +1,14 @@
 <script>
 import AppSearch from './AppSearch.vue';
+import AppLogo from './AppLogo.vue'
 import { store } from '../store';
 import axios from 'axios';
 
 export default{
    
     name: "AppHeader",
-    components: { AppSearch
+    components: { AppSearch,
+        AppLogo
     
     },
     data(){
@@ -48,17 +50,18 @@ export default{
 
 <template>
     <header>
-        <div class="header">
+        <div class="header d-flex align-items-center">
+            <AppLogo/>
             <AppSearch @filter="handlefilter"/>
         </div>
-
     </header>
 </template>
 
 <style scoped lang="scss">
 .header{
+    width: 100%;
     height: 100px;
-background-color: black; }
+background-color: rgb(0, 0, 0); }
 
 
 </style>

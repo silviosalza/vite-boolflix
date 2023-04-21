@@ -1,8 +1,12 @@
 <script>
 import {store} from "../store";
+import AppLogo from "./AppLogo.vue";
 export default{
     name: "AppSearch",
     emits: ["filter"],
+    components: {
+        AppLogo
+    },
     data (){
         return{
             store,
@@ -15,25 +19,26 @@ export default{
 </script>
 
 <template>
-    
-        <div class="search-section d-flex gap-2 justify-content-end align-items-center">
-            <div class="searchbar input-group mb-3">
+        <div class="search-section d-flex justify-content-end">
+            <div class="searchbar input-group">
                 <input @keyup.enter ="$emit('filter')" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Inserisci il titolo" v-model="store.UserFilter">
-                <button @click="$emit('filter')" class="btn btn-danger">Cerca</button>
+                <button @click="$emit('filter')" class="btn btn-danger"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
         </div>
 </template>
 
 <style scoped lang="scss">
 .header{
-    height: 100px;
-    background-color: rgb(66, 66, 66);
     .search-section{
-        height: 100%;
-        padding-right: 2rem;
+        width: 100%;
+        height: 50%;
         .searchbar{
-            height: 30%;
-            width: 30%;
+            width: 500px;
+
+            i,
+            .form-control{
+                font-size: 1.5rem;
+            }  
         }
         .btn{
             padding: 0 3rem;
