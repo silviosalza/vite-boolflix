@@ -2,11 +2,13 @@
 import { store } from '../store';
 import AppCardMovie from './AppCardMovie.vue';
 import AppCardTV from "./AppCardTV.vue"
+import AppLogo from './AppLogo.vue';
 export default{
     name: "AppMainPage",
     components: {
         AppCardMovie,
-        AppCardTV
+        AppCardTV,
+        AppLogo
     },
     data (){
         return{
@@ -49,12 +51,12 @@ export default{
     
     .titleHeader{
         background-image: linear-gradient(to right, #870000, #190a05);
-        padding: 1rem 0;
+        padding: 0.5rem 0;
         margin: 1rem 0;
         width: 40%;
         h2{
             font-size: 3rem;
-            font-weight: 700;
+            font-weight: 300;
             color: white;
         }
 
