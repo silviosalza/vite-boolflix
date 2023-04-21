@@ -14,6 +14,11 @@ export default{
             store,
             isHovered: true
         }
+    },
+    methods:{
+        starVote(element){
+            return parseInt(element.vote_average / 2)
+        }
     }
 }
 </script>
@@ -29,7 +34,7 @@ export default{
             <li><span>Titolo:</span><p>{{ tvshow.name }}</p></li>
             <li><span>Titolo originale:</span><p>{{ tvshow.original_name }}</p></li>
             <li><span>Lingua originale: </span><lang-flag :iso= tvshow.original_language /></li>
-            <li><span>Bootflix rate:</span>{{ tvshow.vote_average }}</li>
+            <li><span>Bootflix rate:</span><div class="stars">{{ starVote(tvshow) }}</div></li>
         </ul>
     </div>
 </template>
