@@ -28,7 +28,9 @@ export default{
 @use "./styles/general.scss";
 body{
   background-image: linear-gradient(to right, #434343 0%, black 100%);
-
+}
+#app{
+  position: relative;
 }
 
 

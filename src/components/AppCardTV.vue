@@ -46,9 +46,10 @@ export default{
 .card{
         width: 200px;
         height: 300px;
-        margin: 2px;
-        background-color: rgb(23, 23, 23, 0.5);
+        margin: 5px;
+        background-image: linear-gradient(to right, #751818, #2f2b2b);
         border-radius: 10px;
+        border: 1px solid rgb(141, 141, 141);
         
         ul{
             padding: 0.5rem;

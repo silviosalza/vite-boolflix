@@ -21,7 +21,7 @@ export default{
 <template>
         <div class="search-section d-flex justify-content-end">
             <div class="searchbar input-group">
-                <input @keyup.enter ="$emit('filter')" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Cerca qualsiasi cosa..." v-model="store.UserFilter">
+                <input @keyup.enter ="$emit('filter')" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Cosa vuoi vedere oggi?" v-model="store.UserFilter">
                 <button @click="$emit('filter')" class="btn btn-danger"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
         </div>

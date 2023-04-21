@@ -23,9 +23,12 @@ export default{
 
 <template>
     <div class="main">
+        <div class="letter" v-if= "(store.movies.length === 0) && (store.TVshows.length === 0)">
+            <span>B</span>
+        </div>
         <div class="movies">
-            <div class="titleHeader">
-                <h2 class="d-flex justify-content-center">MOVIES</h2>
+            <div class="titleHeader" v-if= "(store.movies.length > 0)">
+                <h2>FILM</h2>
             </div>
             <ul class="d-flex flex-wrap">
                 <li v-for="(movie,index) in store.movies" :key="index">
@@ -34,8 +37,8 @@ export default{
             </ul>
         </div>
         <div class="tvseries">
-            <div class="titleHeader">
-                <h2 class="d-flex justify-content-center">TV SHOWS</h2>
+            <div class="titleHeader" v-if= "(store.TVshows.length > 0)">
+                <h2>SERIE TV</h2>
             </div>
             <ul class="d-flex flex-wrap">
                 <li v-for="(tvshow,index) in store.TVshows" :key="index">
@@ -47,19 +50,28 @@ export default{
 </template>
 
 <style scoped lang="scss">
-.main{ 
-    
+.main{
+    .letter{
+        background: -webkit-linear-gradient(#ff0000, #000000);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 20rem;
+        position: absolute;
+        left: calc(50% - 50px);
+        top: calc(350%);
+    }
+    }
     .titleHeader{
-        background-image: linear-gradient(to right, #870000, #190a05);
-        padding: 0.5rem 0;
+        background-image: linear-gradient(to right, #970000, #000000);
+        padding: 0.1rem 0;
         margin: 1rem 0;
-        width: 40%;
+        width: 100%;
         h2{
-            font-size: 3rem;
-            font-weight: 300;
+            padding-left: 3rem;
+            font-size: 2rem;
+            font-weight: 100;
             color: white;
         }
-
     }
     ul{
        padding: 0;
@@ -68,5 +80,5 @@ export default{
        }
    
     }
- }
+
 </style>
