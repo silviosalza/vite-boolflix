@@ -56,6 +56,7 @@ export default{
             li{
                 list-style: none;
                 color: white;
+                font-size: 0.9rem;
                 span{
                     font-weight: 700;
         
@@ -74,6 +75,7 @@ export default{
                 color: white;
                 font-size: 1.5rem;
                 font-weight: 700;
+                padding-top: 1rem;
                 text-align: center;
             }
 

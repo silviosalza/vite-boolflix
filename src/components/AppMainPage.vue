@@ -51,6 +51,7 @@ export default{
 
 <style scoped lang="scss">
 .main{
+    height: calc(100vh - 100px);
     .letter{
         background: -webkit-linear-gradient(#ff0000, #000000);
         -webkit-background-clip: text;
@@ -58,7 +59,7 @@ export default{
         font-size: 20rem;
         position: absolute;
         left: calc(50% - 50px);
-        top: calc(350%);
+        top: calc(50% - 150px);
     }
     }
     .titleHeader{
