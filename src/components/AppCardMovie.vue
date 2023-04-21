@@ -18,6 +18,9 @@ export default{
     methods:{
         starVote(element){
             return parseInt(element.vote_average / 2)
+        },
+        emptyStarVote(element){
+            return 5 - parseInt(element.vote_average / 2)
         }
     }
 }
@@ -33,7 +36,7 @@ export default{
             <li><span>Titolo:</span> <p>{{ movie.title }}</p></li>
             <li><span>Titolo originale:</span> <p>{{ movie.original_title }}</p></li>
             <li><span>Lingua originale: </span><lang-flag :iso= movie.original_language /></li>
-            <li><span>Bootflix rate:</span><div class="stars">{{ starVote(movie) }}</div></li>
+            <li><span>Bootflix rate:</span><div class="stars"><i v-for="num in starVote(movie)" class="fa-solid fa-star"></i><i v-if="starVote(movie) < 5" v-for="num in emptyStarVote(movie)" class="fa-regular fa-star"></i></div></li>
         </ul>
     </div>
 </template>
