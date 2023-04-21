@@ -17,10 +17,10 @@ export default{
     },
     methods:{
         starVote(element){
-            return parseInt(element.vote_average / 2)
+            return Math.ceil(element.vote_average / 2)
         },
         emptyStarVote(element){
-            return 5 - parseInt(element.vote_average / 2)
+            return 5 - Math.ceil(element.vote_average / 2)
         }
     }
 }
