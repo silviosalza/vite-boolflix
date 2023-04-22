@@ -35,6 +35,7 @@ export default{
     perspective-origin: 50% 0;
     span{
         font-size: 7rem;
+        padding: 5px;
         display: inline-block;
     }
 }
